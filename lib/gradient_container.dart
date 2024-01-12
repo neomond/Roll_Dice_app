@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:first_app/styled_text.dart';
 
 const startALignment = Alignment.topLeft;
 const endALignment = Alignment.bottomRight;
@@ -11,6 +10,10 @@ class GradientContainer extends StatelessWidget {
     super.key,
   });
 
+  const GradientContainer.purple({super.key})
+      : color1 = Colors.deepPurple,
+        color2 = Colors.indigo;
+
   final Color color1;
   final Color color2;
 
@@ -21,7 +24,11 @@ class GradientContainer extends StatelessWidget {
         gradient: LinearGradient(
             colors: [color1, color2], begin: startALignment, end: endALignment),
       ),
-      child: const Center(child: StyledText("Hi")),
+      child: Center(
+          child: Image.asset(
+        'assets/images/dice-2.png',
+        width: 200,
+      )),
     );
   }
 }
